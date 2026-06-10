@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://peterdeloryphotographer.com/sitemap.xml

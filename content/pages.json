@@ -1,0 +1,78 @@
+{
+  "site": {
+    "name": "Peter de Lory",
+    "base_url": "https://peterdeloryphotographer.com",
+    "contact_email": "peter@peterdelory.com",
+    "gallery": "Harris Harvey Gallery",
+    "og_default": "/assets/img/og-default.jpg",
+    "nav": [
+      { "label": "Work",        "href": "/" },
+      { "label": "About",       "href": "/about/" },
+      { "label": "Survey",      "href": "/survey/" },
+      { "label": "Catalogue",   "href": "/catalogue/" },
+      { "label": "Commissions", "href": "/commissions/" },
+      { "label": "Contact",     "href": "/contact/" }
+    ]
+  },
+  "pages": [
+    { "out": "index.html", "url": "/", "template": "home.html",
+      "title": "Peter de Lory — Photographer",
+      "description": "Black-and-white photographs by Peter de Lory: the American West, the Pacific Northwest, gelatin silver landscapes. Held by the Smithsonian, Walker Art Center, and SFMOMA.",
+      "og_type": "website", "jsonld": ["person"], "data": "content/home.json" },
+
+    { "out": "about/index.html", "url": "/about/", "template": "about.html",
+      "title": "About — Peter de Lory",
+      "description": "Peter de Lory, born 1948 — a romantic structuralist. BFA San Francisco Art Institute, MFA University of Colorado; NEA Fellowship; fifty years of photographing the American West.",
+      "og_type": "profile", "jsonld": ["person"], "data": "content/about.json" },
+
+    { "out": "survey/index.html", "url": "/survey/", "template": "survey.html",
+      "title": "Survey — Peter de Lory",
+      "description": "A chronological index of Peter de Lory's fifty-year career: series, exhibitions, publications, commissions, awards, and residencies.",
+      "og_type": "website", "jsonld": ["person"], "data": null },
+
+    { "out": "catalogue/index.html", "url": "/catalogue/", "template": "catalogue.html",
+      "title": "Catalogue — Peter de Lory",
+      "description": "The full record of Peter de Lory's exhibitions, public collections, publications, and awards — filterable and sortable.",
+      "og_type": "website", "jsonld": ["person"], "data": null },
+
+    { "out": "commissions/index.html", "url": "/commissions/", "template": "commissions-index.html",
+      "title": "Commissions — Peter de Lory",
+      "description": "Public art and commissioned work by Peter de Lory: Champion at Sea-Tac Airport, Sound Transit's Railwork, Seattle Public Utilities' Citywork, and more.",
+      "og_type": "website", "jsonld": ["person"], "data": "content/commissions-index.json" },
+
+    { "out": "contact/index.html", "url": "/contact/", "template": "contact.html",
+      "title": "Contact — Peter de Lory",
+      "description": "Inquire to acquire work by Peter de Lory. Represented by Harris Harvey Gallery, Seattle.",
+      "og_type": "website", "jsonld": ["person"], "data": "content/contact.json" },
+
+    { "out": "notable/index.html", "url": "/notable/", "template": "notable.html",
+      "title": "Notable Works & Recognition — Peter de Lory",
+      "description": "Fifty years, fifteen public collections, an NEA Fellowship, and an Aperture frontispiece under Minor White. The record of Peter de Lory's work.",
+      "og_type": "website", "jsonld": ["person"], "data": "content/notable.json" },
+
+    { "out": "back-pages/index.html", "url": "/back-pages/", "template": "series.html", "title": "Back Pages — Peter de Lory", "description": "Back Pages (1964–1965): Peter de Lory's earliest, most personal work, made on Cape Cod.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/back-pages.json" },
+    { "out": "pacific-heights-mansions/index.html", "url": "/pacific-heights-mansions/", "template": "series.html", "title": "Pacific Heights Mansions — Peter de Lory", "description": "Pacific Heights Mansions: soft-focus, surrealist photographs of San Francisco that Tony Ray-Jones called genuinely original — later the frontispiece of Aperture 17:2.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/pacific-heights-mansions.json" },
+    { "out": "landscape-one/index.html", "url": "/landscape-one/", "template": "series.html", "title": "Landscape One — Peter de Lory", "description": "Landscape One (1978): early landscape work using the land as a metaphor for emotion.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/landscape-one.json" },
+    { "out": "western-neon-signs/index.html", "url": "/western-neon-signs/", "template": "series.html", "title": "Western Neon Signs — Peter de Lory", "description": "Western Neon Signs: a twenty-year documentary project photographing the disappearing neon of the American West, in color and black-and-white.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/western-neon-signs.json" },
+    { "out": "still-lifes/index.html", "url": "/still-lifes/", "template": "series.html", "title": "Still Lifes — Peter de Lory", "description": "Still Lifes: ongoing large-format 4×5 still-life work spanning Peter de Lory's career.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/still-lifes.json" },
+    { "out": "the-edge-of-town/index.html", "url": "/the-edge-of-town/", "template": "series.html", "title": "The Edge of Town — Peter de Lory", "description": "The Edge of Town (1987–1993): the arid American West along Nevada's Route 50, after Wallace Stegner's Beyond the Hundredth Meridian.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/the-edge-of-town.json" },
+    { "out": "once-upon-a-time-in-the-west/index.html", "url": "/once-upon-a-time-in-the-west/", "template": "series.html", "title": "Once Upon a Time in the West — Peter de Lory", "description": "Once Upon a Time in the West (1988–2004): triptychs on Western mythology and ideology, after Edward Abbey, Wallace Stegner, and Cormac McCarthy.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/once-upon-a-time-in-the-west.json" },
+    { "out": "peopled-landscape/index.html", "url": "/peopled-landscape/", "template": "series.html", "title": "Peopled Landscape — Peter de Lory", "description": "Peopled Landscape by Peter de Lory.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/peopled-landscape.json" },
+    { "out": "big-rock-candy-mountain/index.html", "url": "/big-rock-candy-mountain/", "template": "series.html", "title": "Big Rock Candy Mountain — Peter de Lory", "description": "Big Rock Candy Mountain by Peter de Lory.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/big-rock-candy-mountain.json" },
+    { "out": "henry-real-bird/index.html", "url": "/henry-real-bird/", "template": "series.html", "title": "Henry Real Bird — Peter de Lory", "description": "Henry Real Bird (~1995): the O-W Ranch and the Crow Nation, Montana.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/henry-real-bird.json" },
+    { "out": "tenuous-remnants/index.html", "url": "/tenuous-remnants/", "template": "series.html", "title": "Tenuous Remnants — Peter de Lory", "description": "Tenuous Remnants (2012): tipi rings of the Pryor Mountains, sacred prayer sites that address the stars, and the marks of westward expansion.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/tenuous-remnants.json" },
+    { "out": "half-memory/index.html", "url": "/half-memory/", "template": "series.html", "title": "Half Memory — Peter de Lory", "description": "Half Memory: the unrolling landscape of the American West, framed through car windows.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/half-memory.json" },
+    { "out": "somewhere-along-the-way/index.html", "url": "/somewhere-along-the-way/", "template": "series.html", "title": "Somewhere Along the Way — Peter de Lory", "description": "Somewhere Along the Way: the automobile as framing device, from the Three Exhibitions at Lisa Harris Gallery.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/somewhere-along-the-way.json" },
+    { "out": "balance/index.html", "url": "/balance/", "template": "series.html", "title": "Balance — Peter de Lory", "description": "Balance: three exhibitions at Lisa Harris Gallery, Seattle.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/balance.json" },
+    { "out": "a-silent-way/index.html", "url": "/a-silent-way/", "template": "series.html", "title": "A Silent Way — Peter de Lory", "description": "A Silent Way (2017–2018): gelatin silver photographs of Pacific Northwest water and the Rosario Strait crossing.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/a-silent-way.json" },
+    { "out": "the-falls/index.html", "url": "/the-falls/", "template": "series.html", "title": "The Falls — Peter de Lory", "description": "The Falls (2009–2011): long-exposure waterfalls that become elemental forces. Exhibited at Lisa Harris Gallery, January 2011.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/the-falls.json" },
+    { "out": "the-cape/index.html", "url": "/the-cape/", "template": "series.html", "title": "The Cape — Peter de Lory", "description": "The Cape (1964–early 1980s): Cape Cod aerials and landscapes, after Edward Hopper — where Peter de Lory's work began.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/the-cape.json" },
+    { "out": "the-rock/index.html", "url": "/the-rock/", "template": "series.html", "title": "The Rock — Peter de Lory", "description": "The Rock by Peter de Lory.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/series/the-rock.json" },
+
+    { "out": "commissions/champion/index.html", "url": "/commissions/champion/", "template": "commission-sub.html", "title": "Champion — Sea-Tac Airport — Peter de Lory", "description": "Champion (2003–2013): Peter de Lory photographed the world's tallest Western Red Cedar; the image became a 17-foot mosaic permanently sited at Sea-Tac Airport.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/commissions/champion.json" },
+    { "out": "commissions/railwork-sound-transit/index.html", "url": "/commissions/railwork-sound-transit/", "template": "commission-sub.html", "title": "Railwork — Sound Transit — Peter de Lory", "description": "Railwork (2000–2013): thirteen years documenting Sound Transit building five light rail stations from Seattle to Tacoma.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/commissions/railwork-sound-transit.json" },
+    { "out": "commissions/citywork/index.html", "url": "/commissions/citywork/", "template": "commission-sub.html", "title": "Citywork — Seattle Public Utilities — Peter de Lory", "description": "Citywork (1999–2000): 170 photographs of the entirety of Seattle Public Utilities, permanently installed throughout SPU facilities.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/commissions/citywork.json" },
+    { "out": "commissions/seattle-water-dept/index.html", "url": "/commissions/seattle-water-dept/", "template": "commission-sub.html", "title": "Seattle Water Department — Peter de Lory", "description": "Seattle Water Department (1996): nine months tracing the path of water from the Cascade Mountains to the city's faucets.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/commissions/seattle-water-dept.json" },
+    { "out": "commissions/a-pathway/index.html", "url": "/commissions/a-pathway/", "template": "commission-sub.html", "title": "A Pathway — Peter de Lory", "description": "A Pathway (2015): nineteen images made in and around Hayes Freedom High School, Camas, Washington, for the State Art Collection.", "og_type": "article", "jsonld": ["person", "visualartwork"], "data": "content/commissions/a-pathway.json" }
+  ]
+}

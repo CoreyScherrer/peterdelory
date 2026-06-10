@@ -1,0 +1,19 @@
+<main id="main" class="cat-section">
+  <h1 class="prose-intro" style="font-family:var(--serif);font-size:26px;color:var(--ink);text-transform:none;letter-spacing:.02em;margin-bottom:8px;">Catalogue</h1>
+  <p class="prose-intro">Exhibitions, collections, publications, and awards — filter and sort the full record.</p>
+
+  <div class="cat-toolbar">
+    <button class="cat-chip" data-group="all" aria-pressed="true">All</button>
+    <button class="cat-chip" data-group="solo" aria-pressed="false">Solo shows</button>
+    <button class="cat-chip" data-group="group" aria-pressed="false">Group shows</button>
+    <button class="cat-chip" data-group="collection" aria-pressed="false">Collections</button>
+    <button class="cat-chip" data-group="publication" aria-pressed="false">Publications</button>
+    <button class="cat-chip" data-group="award" aria-pressed="false">Awards</button>
+    <button class="cat-sort" type="button">Sort: Earliest first</button>
+  </div>
+
+  <div class="cat-list">
+{{GENERATED}}
+  </div>
+  <script src="/assets/catalogue.js" defer></script>
+</main>

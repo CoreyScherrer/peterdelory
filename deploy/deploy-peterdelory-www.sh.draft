@@ -1,0 +1,118 @@
+#!/bin/bash
+# deploy-peterdelory-www.sh — Deploy the Peter de Lory static site to
+# peterdeloryphotographer.com.  Usage: ./deploy-peterdelory-www.sh [--yes]
+#
+# DRAFT — not yet wired into dev-ops.sh. To activate:
+#   1. Copy this file to /Users/admin/Sites/scripts/deploy/deploy-peterdelory-www.sh
+#      (it sources deploy-common.sh from that directory).
+#   2. Install the nginx conf (see deploy/peterdeloryphotographer.com.conf header).
+#   3. Confirm DNS for peterdeloryphotographer.com points at the Cloudflare tunnel.
+#   4. Optionally register "peterdelory-www" in dev-ops.sh VALID_SERVICES +
+#      get_dev_dir/get_prod_dir, and add a services.yaml probe_url entry.
+#
+# Pulls from CoreyScherrer/peterdelory into /var/www/peterdeloryphotographer/www/.
+# No LaunchDaemon, no venv — nginx serves public/ directly (same model as
+# deploy-coreyiscorey-www.sh, which this is adapted from).
+
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/deploy-common.sh"
+
+SERVICE="peterdelory-www"
+PROD_DIR="/var/www/peterdeloryphotographer/www"
+REPO_URL="https://github.com/CoreyScherrer/peterdelory.git"
+BRANCH="main"
+DOMAIN="peterdeloryphotographer.com"
+AUTO_APPROVE=false
+
+if [[ "${1:-}" == "--yes" ]]; then
+    AUTO_APPROVE=true
+fi
+
+echo ""
+echo "╔════════════════════════════════════════════════════════╗"
+echo "║        PETER DE LORY SITE DEPLOYMENT                   ║"
+echo "╚════════════════════════════════════════════════════════╝"
+echo ""
+
+acquire_deploy_lock
+
+log "Starting Peter de Lory site deployment..."
+validate_service_name "$SERVICE"
+
+echo "Service:     $SERVICE"
+echo "Target:      $PROD_DIR"
+echo "Repo:        $REPO_URL"
+echo "Branch:      $BRANCH"
+echo ""
+
+if [[ "$AUTO_APPROVE" == true ]]; then
+    log "Non-interactive mode (--yes): auto-approving deployment"
+else
+    read -p "Continue with deployment? (y/N) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        log "Deployment cancelled by user"
+        exit 0
+    fi
+fi
+
+# Backup if prod dir already has content
+if [[ -d "$PROD_DIR" && -n "$(sudo ls -A "$PROD_DIR" 2>/dev/null)" ]]; then
+    create_deployment_backup "$PROD_DIR" "$SERVICE"
+fi
+
+# Provision webroot
+sudo mkdir -p "$PROD_DIR"
+sudo chown -R "$PROD_USER:$PROD_GROUP" "$PROD_DIR"
+sudo chmod 755 "$PROD_DIR"
+
+# Fetch / reset from GitHub
+cd "$PROD_DIR"
+sudo git config --global --add safe.directory "$PROD_DIR" 2>/dev/null || true
+sudo git config --global --add safe.directory "/private$PROD_DIR" 2>/dev/null || true
+
+if [[ ! -d .git ]]; then
+    log "Initializing git repo in $PROD_DIR..."
+    sudo -u "$PROD_USER" git init -b "$BRANCH"
+    sudo -u "$PROD_USER" git remote add origin "$REPO_URL"
+fi
+
+CURRENT_REMOTE="$(sudo -u "$PROD_USER" git remote get-url origin 2>/dev/null || echo '')"
+if [[ "$CURRENT_REMOTE" != "$REPO_URL" ]]; then
+    log_warning "origin was '$CURRENT_REMOTE', resetting to '$REPO_URL'"
+    sudo -u "$PROD_USER" git remote set-url origin "$REPO_URL"
+fi
+
+log "Fetching origin/$BRANCH..."
+sudo -u "$PROD_USER" git fetch origin "$BRANCH" --quiet
+
+log "Hard-resetting to origin/$BRANCH..."
+sudo -u "$PROD_USER" git reset --hard "origin/$BRANCH" --quiet
+
+COMMIT="$(sudo -u "$PROD_USER" git rev-parse --short HEAD)"
+log_success "Deployed commit: $COMMIT"
+
+fix_permissions "$PROD_DIR"
+
+# Sanity check — public/index.html must exist or nginx will 404/500
+if [[ ! -f "$PROD_DIR/public/index.html" ]]; then
+    log_warning "$PROD_DIR/public/index.html not found — $DOMAIN will fail until the repo ships public/index.html"
+fi
+
+# No daemon, no venv. Static-only. Smoke-check nginx.
+HTTP_CODE="$(curl -s -o /dev/null -w "%{http_code}" -k --resolve "$DOMAIN:443:127.0.0.1" "https://$DOMAIN/" || echo "000")"
+if [[ "$HTTP_CODE" =~ ^(200|301|302)$ ]]; then
+    log_success "Smoke check: https://$DOMAIN/ → $HTTP_CODE"
+else
+    log_warning "Smoke check returned HTTP $HTTP_CODE (expected 200/301/302). Check $PROD_DIR/public/index.html and the nginx conf."
+fi
+
+log_deployment "$SERVICE" "SUCCESS"
+log_success "Peter de Lory site deployment completed!"
+
+echo ""
+echo "✅ Live:  https://$DOMAIN/"
+echo "Webroot: $PROD_DIR/public/"
+echo ""
