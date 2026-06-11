@@ -103,7 +103,15 @@ def render_jsonld(kinds, page, data, site):
 
 
 # ── <head> ──────────────────────────────────────────────────────────────────
-def build_head(page, data, site):
+def asset_version():
+    """Short content hash of site.css — used as a ?v= cache-buster so a CSS
+    change forces browsers to fetch the new file instead of a stale cache."""
+    import hashlib
+    css = (PUB / "assets" / "site.css").read_bytes()
+    return hashlib.sha1(css).hexdigest()[:8]
+
+
+def build_head(page, data, site, asset_ver):
     canonical = site["base_url"] + page["url"]
     og_image = site["base_url"] + ((data or {}).get("og_image") or site["og_default"])
     return fill(read(PARTIALS / "head.html"), {
@@ -112,6 +120,7 @@ def build_head(page, data, site):
         "canonical": canonical,
         "og_type": page.get("og_type", "website"),
         "og_image": og_image,
+        "asset_ver": asset_ver,
     })
 
 
@@ -358,6 +367,7 @@ def main():
 
     header = build_header(site)
     footer = read(PARTIALS / "footer.html")
+    asset_ver = asset_version()
 
     written = 0
     for page in manifest["pages"]:
@@ -378,7 +388,7 @@ def main():
         else:  # about, commissions-index, contact = prose
             body = body_prose(tpl, data)
 
-        head = build_head(page, data, site)
+        head = build_head(page, data, site, asset_ver)
         jsonld = render_jsonld(page.get("jsonld", []), page, data, site)
 
         out_path = PUB / page["out"]
