@@ -114,6 +114,10 @@ def asset_version():
 def build_head(page, data, site, asset_ver):
     canonical = site["base_url"] + page["url"]
     og_image = site["base_url"] + ((data or {}).get("og_image") or site["og_default"])
+    # Site-wide noindex while the site is being refined; flip site.noindex to
+    # false (in content/pages.json) to make it indexable.
+    robots_meta = ('<meta name="robots" content="noindex, nofollow">\n'
+                   if site.get("noindex") else "")
     return fill(read(PARTIALS / "head.html"), {
         "title": html.escape(page["title"]),
         "description": html.escape(page["description"]),
@@ -121,6 +125,7 @@ def build_head(page, data, site, asset_ver):
         "og_type": page.get("og_type", "website"),
         "og_image": og_image,
         "asset_ver": asset_ver,
+        "robots_meta": robots_meta,
     })
 
 
@@ -341,9 +346,12 @@ def write_sitemap(site, pages):
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + urls + "\n</urlset>\n", encoding="utf-8")
-    (PUB / "robots.txt").write_text(
-        "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % site["base_url"],
-        encoding="utf-8")
+    if site.get("noindex"):
+        # Keep the whole site out of search engines while it's being refined.
+        robots = "User-agent: *\nDisallow: /\n"
+    else:
+        robots = "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % site["base_url"]
+    (PUB / "robots.txt").write_text(robots, encoding="utf-8")
 
 
 def write_404(header, footer):

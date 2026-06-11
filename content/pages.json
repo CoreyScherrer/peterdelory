@@ -2,6 +2,7 @@
   "site": {
     "name": "Peter de Lory",
     "base_url": "https://peterdeloryphotographer.com",
+    "noindex": true,
     "contact_email": "peter@peterdelory.com",
     "gallery": "Harris Harvey Gallery",
     "og_default": "/assets/img/og-default.jpg",
