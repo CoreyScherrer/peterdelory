@@ -2,11 +2,16 @@
   "slug": "the-falls",
   "title": "The Falls",
   "period": "2009–2011",
-  "hero": "https://drive.google.com/thumbnail?id=1TVYde_sHRgHF_KGK1NYcmjHQLH53uxM9&sz=w1400",
+  "hero": "/assets/img/the-falls.jpg",
   "hero_alt": "Palouse Falls in Moonlight, WA, 2009, by Peter de Lory",
-  "hero_pos": "50% 78%",
+  "hero_pos": "50% 55%",
   "pullQuote": "195 ft. plunge.",
   "quoteAttr": "Palouse Falls in Moonlight, WA, 2009",
   "body": "<p>Waterfalls are among the most ancient subjects in landscape photography — and among the most difficult to make original. Peter de Lory's <em>The Falls</em> does not try to simply record their spectacle. These are long exposures, some in moonlight, that transform moving water into something closer to smoke or stone. The falls become elemental forces rather than tourist landmarks.</p><p>The series was exhibited at <a href=\"https://www.lisaharrisgallery.com\">Lisa Harris Gallery</a>, Seattle, January 6–29, 2011. Archival carbon pigment prints.</p><p><a href=\"https://www.blurb.com/b/9897830-the-falls-3\">Self-published Blurb edition available.</a></p>",
-  "meta": { "medium": "Archival carbon pigment", "period": "2009–2011", "exhibition": "Lisa Harris Gallery, Jan 2011", "gallery": "Harris Harvey, Seattle" }
+  "meta": {
+    "medium": "Archival carbon pigment",
+    "period": "2009–2011",
+    "exhibition": "Lisa Harris Gallery, Jan 2011",
+    "gallery": "Harris Harvey, Seattle"
+  }
 }

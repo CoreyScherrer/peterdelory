@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 .venv/
 .preview-*.png
+public/assets/img/_scans/

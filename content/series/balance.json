@@ -2,11 +2,14 @@
   "slug": "balance",
   "title": "Balance",
   "period": "Lisa Harris Gallery",
-  "hero": "https://drive.google.com/thumbnail?id=1M_ZV4t-afTc7YKG5xw4hh-B3HUX2gji9&sz=w1400",
+  "hero": "/assets/img/balance.jpg",
   "hero_alt": "Balance — Rockies Falling Star, 2006, by Peter de Lory",
   "hero_pos": "50% 40%",
   "pullQuote": null,
   "quoteAttr": null,
   "body": "<p>The automobile as a framing device. <em>Balance</em> was shown across three exhibitions at <a href=\"https://www.lisaharrisgallery.com\">Lisa Harris Gallery</a>, Seattle, and published in the 2018 <em>Three Exhibitions</em> Blurb book with <a href=\"/half-memory/\">Half Memory</a> and <a href=\"/somewhere-along-the-way/\">Somewhere Along the Way</a>.</p>",
-  "meta": { "medium": "Gelatin silver", "gallery": "Lisa Harris Gallery" }
+  "meta": {
+    "medium": "Gelatin silver",
+    "gallery": "Lisa Harris Gallery"
+  }
 }

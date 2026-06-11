@@ -2,11 +2,16 @@
   "slug": "once-upon-a-time-in-the-west",
   "title": "Once Upon a Time in the West",
   "period": "1988–2004",
-  "hero": "https://drive.google.com/thumbnail?id=1CJ7Dj-izh7maeTesjW9L8nhXnau-LKQU&sz=w1400",
+  "hero": "/assets/img/once-upon-a-time-in-the-west.jpg",
   "hero_alt": "Once Upon a Time in the West, by Peter de Lory",
-  "hero_pos": "50% 70%",
+  "hero_pos": "50% 45%",
   "pullQuote": "We look at the West as a place that's inexhaustible — and all those things that we romanticize are still there, only now in sparse amounts. Some of the photographs I'm working on now are like romantic epitaphs.",
   "quoteAttr": "Peter de Lory",
   "body": "<p>Begun in 1988 and worked through 2004, <em>Once Upon a Time in the West</em> adopted the triptych form in 1989 to hold the American West's mythologies and ideologies in a single frame. Fifty-four pieces, made over sixteen years, that read the West the way <a href=\"https://en.wikipedia.org/wiki/Edward_Abbey\">Edward Abbey</a>, <a href=\"https://en.wikipedia.org/wiki/Wallace_Stegner\">Wallace Stegner</a>, and <a href=\"https://en.wikipedia.org/wiki/Cormac_McCarthy\">Cormac McCarthy</a> wrote it: as a place we keep dreaming even as it disappears.</p>",
-  "meta": { "medium": "Gelatin silver triptychs", "period": "1988–2004", "works": "54 pieces", "gallery": "Harris Harvey, Seattle" }
+  "meta": {
+    "medium": "Gelatin silver triptychs",
+    "period": "1988–2004",
+    "works": "54 pieces",
+    "gallery": "Harris Harvey, Seattle"
+  }
 }

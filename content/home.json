@@ -1,17 +1,72 @@
 {
-  "hero": "https://drive.google.com/thumbnail?id=1M_ZV4t-afTc7YKG5xw4hh-B3HUX2gji9&sz=w1400",
-  "hero_alt": "Balance — Rockies Falling Star, 2006, by Peter de Lory",
+  "hero": "/assets/img/balance.jpg",
+  "hero_alt": "Star trails over pine silhouettes, by Peter de Lory",
   "hero_quote": "“I photograph in a very formal, straightforward way structurally, which frees the subject up for interpretation, creating an opening for emotion and meaning.”",
   "hero_attr": "— Peter de Lory",
   "series_grid": [
-    { "slug": "the-falls", "title": "The Falls", "subtitle": "2009–2011 · Gelatin silver", "thumb": "https://drive.google.com/thumbnail?id=1TVYde_sHRgHF_KGK1NYcmjHQLH53uxM9&sz=w400", "thumb_pos": "50% 82%" },
-    { "slug": "once-upon-a-time-in-the-west", "title": "Once Upon a Time in the West", "subtitle": "1988–2004 · Triptychs", "thumb": "https://drive.google.com/thumbnail?id=1CJ7Dj-izh7maeTesjW9L8nhXnau-LKQU&sz=w400", "thumb_pos": "50% 80%" },
-    { "slug": "pacific-heights-mansions", "title": "Pacific Heights Mansions", "subtitle": "Aperture 17:2 · 1973 Frontispiece", "thumb": "https://drive.google.com/thumbnail?id=1A5KDSeYm5pN9hAVle7gNlFVUfgQYv6Dh&sz=w400", "thumb_pos": "28% 65%" },
-    { "slug": "citywork", "title": "Citywork", "subtitle": "1999–2000 · Seattle Public Utilities", "thumb": "https://drive.google.com/thumbnail?id=1aFW11e9DFbyyR7QY6AXk6hY6o-0gq6P8&sz=w400", "thumb_pos": "25% 55%", "href": "/commissions/citywork/" },
-    { "slug": "the-edge-of-town", "title": "The Edge of Town", "subtitle": "1987–1993 · The arid West", "thumb": "https://drive.google.com/thumbnail?id=1sEfQ1IXE81LqJ-z5Yqw7P7RQ-QzvrG4w&sz=w400", "thumb_pos": "50% 50%" },
-    { "slug": "half-memory", "title": "Half Memory", "subtitle": "Lisa Harris Gallery", "thumb": "https://drive.google.com/thumbnail?id=1Wbh6C-nz2ptxakLjJ3z-qWAQdM4RJAnv&sz=w400", "thumb_pos": "50% 38%" },
-    { "slug": "tenuous-remnants", "title": "Tenuous Remnants", "subtitle": "2012 · Pryor Mountains, MT", "thumb": null, "thumb_pos": "50% 50%" },
-    { "slug": "the-cape", "title": "The Cape", "subtitle": "1964–early 1980s · Cape Cod", "thumb": null, "thumb_pos": "50% 50%" },
-    { "slug": "a-silent-way", "title": "A Silent Way", "subtitle": "2017–2018 · Gelatin silver", "thumb": null, "thumb_pos": "50% 50%" }
+    {
+      "slug": "the-falls",
+      "title": "The Falls",
+      "subtitle": "2009–2011 · Gelatin silver",
+      "thumb": "/assets/img/the-falls.jpg",
+      "thumb_pos": "50% 50%"
+    },
+    {
+      "slug": "once-upon-a-time-in-the-west",
+      "title": "Once Upon a Time in the West",
+      "subtitle": "1988–2004 · Triptychs",
+      "thumb": "/assets/img/once-upon-a-time-in-the-west.jpg",
+      "thumb_pos": "50% 50%"
+    },
+    {
+      "slug": "pacific-heights-mansions",
+      "title": "Pacific Heights Mansions",
+      "subtitle": "Aperture 17:2 · 1973 Frontispiece",
+      "thumb": "/assets/img/pacific-heights-mansions.jpg",
+      "thumb_pos": "50% 50%"
+    },
+    {
+      "slug": "citywork",
+      "title": "Citywork",
+      "subtitle": "1999–2000 · Seattle Public Utilities",
+      "thumb": "/assets/img/citywork.jpg",
+      "thumb_pos": "50% 50%",
+      "href": "/commissions/citywork/"
+    },
+    {
+      "slug": "the-edge-of-town",
+      "title": "The Edge of Town",
+      "subtitle": "1987–1993 · The arid West",
+      "thumb": "https://drive.google.com/thumbnail?id=1sEfQ1IXE81LqJ-z5Yqw7P7RQ-QzvrG4w&sz=w400",
+      "thumb_pos": "50% 50%"
+    },
+    {
+      "slug": "half-memory",
+      "title": "Half Memory",
+      "subtitle": "Lisa Harris Gallery",
+      "thumb": "/assets/img/half-memory.jpg",
+      "thumb_pos": "50% 50%"
+    },
+    {
+      "slug": "tenuous-remnants",
+      "title": "Tenuous Remnants",
+      "subtitle": "2012 · Pryor Mountains, MT",
+      "thumb": null,
+      "thumb_pos": "50% 50%"
+    },
+    {
+      "slug": "the-cape",
+      "title": "The Cape",
+      "subtitle": "1964–early 1980s · Cape Cod",
+      "thumb": null,
+      "thumb_pos": "50% 50%"
+    },
+    {
+      "slug": "a-silent-way",
+      "title": "A Silent Way",
+      "subtitle": "2017–2018 · Gelatin silver",
+      "thumb": "/assets/img/a-silent-way.jpg",
+      "thumb_pos": "50% 50%"
+    }
   ]
 }

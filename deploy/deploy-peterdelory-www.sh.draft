@@ -101,6 +101,15 @@ if [[ ! -f "$PROD_DIR/public/index.html" ]]; then
     log_warning "$PROD_DIR/public/index.html not found — $DOMAIN will fail until the repo ships public/index.html"
 fi
 
+# Reload nginx so any conf changes take effect (static content itself needs no
+# reload, but this keeps the deploy a single command and is a safe no-op when
+# the conf is unchanged). Validate first; skip reload if the config is bad.
+if sudo nginx -t >/dev/null 2>&1; then
+    sudo nginx -s reload && log_success "nginx reloaded"
+else
+    log_warning "nginx -t failed — skipping reload. Run 'sudo nginx -t' to see the error."
+fi
+
 # No daemon, no venv. Static-only. Smoke-check nginx.
 HTTP_CODE="$(curl -s -o /dev/null -w "%{http_code}" -k --resolve "$DOMAIN:443:127.0.0.1" "https://$DOMAIN/" || echo "000")"
 if [[ "$HTTP_CODE" =~ ^(200|301|302)$ ]]; then
