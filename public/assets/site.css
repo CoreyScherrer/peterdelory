@@ -70,6 +70,24 @@ a { color: inherit; }
   color: var(--ink);
   text-decoration: none;
 }
+.site-tagline {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--meta-2);
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 0.75px solid var(--rule);
+  white-space: nowrap;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+@media (max-width: 380px) {
+  .site-tagline { display: none; }   /* keep the name uncrowded on tiny screens */
+}
 
 .header-rule {
   border: none;
