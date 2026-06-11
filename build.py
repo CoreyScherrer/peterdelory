@@ -142,12 +142,18 @@ def img_available(url):
 
 
 def hero_block(data, classname="series-hero", pos_default="50% 70%"):
-    """Full-bleed hero. Real <img> if an image is available, else a clean band."""
+    """Full-bleed hero. Real <img> if an image is available, else a clean band.
+    Supports optional hero_scale (int percent) for zoom-in framing set by the
+    editor; default/100 produces byte-identical output to the un-zoomed form."""
     url = data.get("hero")
     if img_available(url):
         pos = data.get("hero_pos", pos_default)
-        return ('<img src="{src}" alt="{alt}" style="object-position:{pos}">'.format(
-            src=html.escape(url), alt=html.escape(data.get("hero_alt", "")), pos=pos))
+        style = "object-position:%s" % pos
+        scale = data.get("hero_scale")
+        if scale and int(scale) != 100:
+            style += ";transform:scale(%.3f);transform-origin:%s" % (int(scale) / 100.0, pos)
+        return '<img src="{src}" alt="{alt}" style="{style}">'.format(
+            src=html.escape(url), alt=html.escape(data.get("hero_alt", "")), style=style)
     return ""  # empty hero band (CSS gives it the black background)
 
 
