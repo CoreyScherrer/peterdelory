@@ -1,16 +1,16 @@
 {
-  "slug": "pacific-heights-mansions",
-  "title": "Pacific Heights Mansions",
-  "period": "early career · San Francisco",
+  "body": "<p>Soft-focus, surrealist, dreamlike — the mansions and gardens of San Francisco's Pacific Heights were the first body of work to earn Peter de Lory recognition outside his immediate circle. The English photographer <a href=\"https://en.wikipedia.org/wiki/Tony_Ray-Jones\">Tony Ray-Jones</a> singled it out as genuinely original.</p><p>In 1973, this work — titled <em>“the room”</em> — became the frontispiece of <em><a href=\"https://aperture.org\">Aperture</a></em> Volume 17, Number 2, chosen by <a href=\"https://en.wikipedia.org/wiki/Minor_White\">Minor White</a>: the very first image in the issue, before any text. → <a href=\"/notable/\">The full story</a>.</p>",
   "hero": "/assets/img/pacific-heights-mansions.jpg",
   "hero_alt": "Pacific Heights Mansions — the frontispiece of Aperture 17:2",
-  "hero_pos": "50% 45%",
-  "pullQuote": "The phenomena of life may be likened unto a dream, a phantasm, a bubble, a shadow, the glistening dew, or lightning flash, and thus they ought to be contemplated.",
-  "quoteAttr": "Diamond Sutra, chosen by Minor White for Aperture 17:2",
-  "body": "<p>Soft-focus, surrealist, dreamlike — the mansions and gardens of San Francisco's Pacific Heights were the first body of work to earn Peter de Lory recognition outside his immediate circle. The English photographer <a href=\"https://en.wikipedia.org/wiki/Tony_Ray-Jones\">Tony Ray-Jones</a> singled it out as genuinely original.</p><p>In 1973, this work — titled <em>“the room”</em> — became the frontispiece of <em><a href=\"https://aperture.org\">Aperture</a></em> Volume 17, Number 2, chosen by <a href=\"https://en.wikipedia.org/wiki/Minor_White\">Minor White</a>: the very first image in the issue, before any text. → <a href=\"/notable/\">The full story</a>.</p>",
+  "hero_pos": "53.7% 0.0%",
   "meta": {
     "medium": "Gelatin silver",
     "period": "early 1970s",
     "publication": "Aperture 17:2, 1973"
-  }
+  },
+  "period": "early career · San Francisco",
+  "pullQuote": "The phenomena of life may be likened unto a dream, a phantasm, a bubble, a shadow, the glistening dew, or lightning flash, and thus they ought to be contemplated.",
+  "quoteAttr": "Diamond Sutra, chosen by Minor White for Aperture 17:2",
+  "slug": "pacific-heights-mansions",
+  "title": "Pacific Heights Mansions"
 }
